@@ -5,17 +5,7 @@ const dummy_function = () => {
 
 const isLeap=(year)=>{
 
-    if(year%400===0){
-        return "LEAP";
-    }
-    if(year%100===0){
-        return "NOT LEAP";
-    }
-    if(year%4===0){
-        return "LEAP"
-    }
-
-    return "NOT LEAP"
+    return ((year%100===0)?(year%400===0):(year%4===0))?"LEAP":"NOT LEAP";
 }
 
 module.exports = {
