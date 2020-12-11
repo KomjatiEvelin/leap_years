@@ -8,7 +8,7 @@ describe('Dummy Test Suite', ()=>{
     })
 })
 
-describe('Divisibility Test',()=>{
+describe('Divisibility Test for Simple year',()=>{
     it('is divisible by 400 ',()=>{
         let year=2000;
         let expected="LEAP";
@@ -40,5 +40,14 @@ describe('Divisibility Test',()=>{
         let expected="NOT LEAP";
         let actual=api.isLeap(year);
         expect(actual).toBe(expected);
+    })
+})
+
+describe('Divisibility Test for array of years',()=>{
+    it('is array elements leap or not',()=>{
+        let years=[2000,2100,2012,2010];
+        let expected=["LEAP","NOT LEAP","LEAP","NOT LEAP"];
+        let actual=api.isLeaps(years);
+        expect(actual).toStrictEqual(expected);
     })
 })
